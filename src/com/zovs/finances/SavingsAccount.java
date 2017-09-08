@@ -1,3 +1,5 @@
+package com.zovs.finances;
+
 public class SavingsAccount {
     int balance = 0;
 
@@ -12,5 +14,11 @@ public class SavingsAccount {
 
     public void withdraw(int amount) {
         balance -= amount;
+    }
+
+    public SavingsAccount nextYear(int interestRate) {
+        SavingsAccount result = new SavingsAccount();
+        result.deposit(balance() + (balance() * interestRate / 100));
+        return result;
     }
 }
